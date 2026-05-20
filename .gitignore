@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Yarn (Berry)
+.yarn/install-state.gz
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.pnp.*
+
+# Editors
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log

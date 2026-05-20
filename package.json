@@ -1,0 +1,28 @@
+{
+  "name": "@reglobe/lego-http",
+  "version": "1.0.0",
+  "main": "lib/index.ts",
+  "types": "lib/index.ts",
+  "exports": {
+    ".": "./lib/index.ts",
+    "./*": "./lib/*"
+  },
+  "peerDependencies": {
+    "@reglobe/lego-core": ">=3.0.0",
+    "@reglobe/lego-fetch": ">=3.0.0",
+    "@reglobe/lego-storage": ">=5.0.0-alpha.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reglobe/react-lego-http.git"
+  },
+  "author": "Cashify",
+  "bugs": {
+    "url": "https://github.com/reglobe/react-lego-http/issues"
+  },
+  "homepage": "https://github.com/reglobe/react-lego-http#readme",
+  "files": [
+    "lib"
+  ],
+  "packageManager": "yarn@4.6.0"
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node"
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"]
+}
