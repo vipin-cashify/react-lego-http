@@ -6,6 +6,7 @@ import type {LegoFetchResponse} from '@reglobe/lego-fetch/LegoFetchResponse';
 
 import {authEvent} from '../auth/auth-event';
 import {deleteUserAuth, getUserAuth} from '../auth/auth.util';
+import {getLegoHttpAuthHeader} from '../config/lego-http-config';
 
 export class LegoUserAuthInterceptor extends LegoFetchInterceptor {
 
@@ -20,7 +21,7 @@ export class LegoUserAuthInterceptor extends LegoFetchInterceptor {
         if (auth) {
             request.init.headers = {
                 ...request.init.headers,
-                'X-USER-AUTH': auth
+                [getLegoHttpAuthHeader()]: auth
             }
         }
         return super.interceptRequest(request);

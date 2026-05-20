@@ -5,6 +5,8 @@ import {LegoSource} from '@reglobe/lego-core/lego-source/LegoSource';
 import {LegoFetch} from '@reglobe/lego-fetch/LegoFetch';
 import type {LegoFetchInterceptor} from '@reglobe/lego-fetch/LegoFetchInterceptor';
 
+import {LegoAuthHeaderType, setLegoHttpAuthHeader} from '../config/lego-http-config';
+
 import {commonInterceptorConstants} from './interceptor.constants';
 import {LegoUserAuthInterceptor} from './LegoUserAuthInterceptor';
 
@@ -45,8 +47,12 @@ export function initializeHttpNative(
     lruCache?: boolean,
     fetchExtraInterceptor?: Map<string, LegoFetchInterceptor>,
     bundleVersion?: string,
-    buildVersion?: string
+    buildVersion?: string,
+    userAuthHeader?: LegoAuthHeaderType
 ): void {
+    if (userAuthHeader) {
+        setLegoHttpAuthHeader(userAuthHeader);
+    }
     const fetchInterceptorMap = new Map<string, LegoFetchInterceptor>(fetchExtraInterceptor);
     fetchInterceptorMap.set(commonInterceptorConstants.USER_AUTH_HEADER, new LegoUserAuthInterceptor());
     initializeFetchClientWithInterceptor(serviceType, 'native', true, lruCache, fetchInterceptorMap, bundleVersion, buildVersion);
